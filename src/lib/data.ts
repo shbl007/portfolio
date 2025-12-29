@@ -13,7 +13,7 @@ export const projects = [
   },
   {
     title: "Thrifty Personal Leasing",
-    role: "UI Developer",
+    role: "UI Development",
     year: "2024",
     image: "/thrifty-pro1.jpeg",
   },
