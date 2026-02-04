@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { TypewriterText } from "../ui/TypewriterText";
 
 export function Contact() {
   return (
@@ -16,16 +17,34 @@ export function Contact() {
         </div>
 
         <div className="max-w-4xl">
-          <motion.h3
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-7xl font-bold tracking-tighter uppercase mb-12 leading-[1.1]"
-          >
-            Open to frontend and UI-focused roles, collaborations, and
-            meaningful projects.
-          </motion.h3>
+          <div className="relative mb-12">
+  {/* Height lock */}
+  <h3
+    aria-hidden
+    className="opacity-0 pointer-events-none select-none text-4xl md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
+  >
+    Open to frontend and UI-focused roles, collaborations, and
+    meaningful projects.
+  </h3>
+
+  {/* Animated text */}
+  <motion.h3
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="absolute inset-0 text-[2.1rem] md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
+  >
+    <TypewriterText
+      text="Open to frontend and UI-focused roles, collaborations, and meaningful projects."
+      typingSpeed={30}
+      startDelay={300}
+      cursor
+      cursorChar="▌"
+    />
+  </motion.h3>
+</div>
+
 
           <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
             <motion.a
