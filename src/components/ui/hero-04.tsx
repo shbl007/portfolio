@@ -9,6 +9,7 @@ import Thrifty from "../../../public/thrifty.png";
 import secondNature from "../../../public/second-nature.png";
 import gemini from "../../../public/gemini.png";
 import { motion } from "framer-motion";
+import { TiltCard } from "./TiltCard";
 
 const images = [
   { id: 0, src: Thrifty },
@@ -68,7 +69,7 @@ export function HeroSection04() {
           <p className="text-sm absolute -top-4 left-8 md:left-20 xl:left-16 font-medium tracking-wider">
             2001
           </p>
-          
+
           <h1
             className={`z-20 text-primary relative font-bold text-center tracking-[-7px] text-7xl md:text-9xl xl:tracking-[-1rem] md:tracking-[-14px] xl:text-[8rem] xl:whitespace-nowrap uppercase`}
           >
@@ -90,18 +91,23 @@ export function HeroSection04() {
                 <div>/ UI Development</div>
                 <div>/ UI/UX Design</div>
               </div>
-              <div className="absolute hidden  md:flex left-1/2 -top-10 w-fit overflow-hidden bg-secondary">
-                <Image
-                  src={myImage}
-                  alt="Designer portrait"
-                  className="h-100 w-full object-contain grayscale"
-                  width={1000}
-                  height={1000}
-                />
-                <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
-                  INTERFACE ENGINEERING
+              <TiltCard
+                intensity={18}
+                className="absolute hidden md:flex left-1/2 -top-10 w-fit bg-secondary"
+              >
+                <div className="relative overflow-hidden md:flex">
+                  <Image
+                    src={myImage}
+                    alt="Designer portrait"
+                    className="h-100 w-full object-contain grayscale"
+                    width={1000}
+                    height={1000}
+                  />
+                  <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
+                    INTERFACE ENGINEERING
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </div>
           </div>
           <div className="flex md:hidden left-1/2 -top-10 w-full md:w-fit overflow-hidden bg-secondary">
@@ -113,7 +119,7 @@ export function HeroSection04() {
               height={1000}
             />
             <div className="text-left p-2 rotate-180 [writing-mode:vertical-rl] text-xs font-medium tracking-widest">
-              BASED IN BOKARO STEEL CITY
+              #INTERFACE ENGINEERING
             </div>
           </div>
         </div>
