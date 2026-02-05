@@ -4,30 +4,40 @@ export const projects = [
     role: "Frontend / UI",
     year: "2025",
     image: "/npd.png",
+    description:
+      "Built a workflow-heavy product lifecycle dashboard with tables, filters, status flows, and responsive UI patterns for internal teams.",
   },
   {
     title: "Company Website",
     role: "Frontend",
     year: "2024",
     image: "/vcompany.jpeg",
+    description:
+      "Developed a clean, responsive company website with modern layout sections, smooth interactions, and optimized performance across devices.",
   },
   {
     title: "Thrifty Personal Leasing",
     role: "UI Development",
     year: "2024",
     image: "/thrifty.png",
+    description:
+      "Designed and implemented a premium car leasing UI with modular components, interactive flows, and pixel-perfect responsive layouts using React + Tailwind.",
   },
   {
     title: "Gemini Building Materials",
     role: "Frontend / UI",
     year: "2024",
     image: "/gemini.png",
+    description:
+      "Created a product-focused web experience with structured navigation, strong visual hierarchy, and reusable UI components for a materials brand.",
   },
   {
     title: "The Dwave",
     role: "Frontend / UI",
     year: "2026",
     image: "/dwave.png",
+    description:
+      "Developing a modern UI system with animation-first interactions, scalable components, and a design-driven layout for a next-gen web product.",
   },
 ];
 

@@ -1,11 +1,18 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { TypewriterText } from "../ui/TypewriterText";
 
 export function Contact() {
+  const headingRef = useRef<HTMLDivElement | null>(null);
+
+  const inView = useInView(headingRef, {
+    once: true,
+    margin: "-20% 0px -20% 0px",
+  });
+
   return (
     <section id="contact" className="py-24 px-6 md:py-48">
       <div className="mx-auto max-w-7xl text-center md:text-left">
@@ -17,34 +24,35 @@ export function Contact() {
         </div>
 
         <div className="max-w-4xl">
-          <div className="relative mb-12">
-  {/* Height lock */}
-  <h3
-    aria-hidden
-    className="opacity-0 pointer-events-none select-none text-4xl md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
-  >
-    Open to frontend and UI-focused roles, collaborations, and
-    meaningful projects.
-  </h3>
+          <div ref={headingRef} className="relative mb-12">
+            {/* Height lock */}
+            <h3
+              aria-hidden
+              className="opacity-0 pointer-events-none select-none text-4xl md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
+            >
+              Open to frontend and UI-focused roles, collaborations, and
+              meaningful projects.
+            </h3>
 
-  {/* Animated text */}
-  <motion.h3
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="absolute inset-0 text-[2.1rem] md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
-  >
-    <TypewriterText
-      text="Open to frontend and UI-focused roles, collaborations, and meaningful projects."
-      typingSpeed={30}
-      startDelay={300}
-      cursor
-      cursorChar="▌"
-    />
-  </motion.h3>
-</div>
-
+            {/* Animated text */}
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0 text-[2.1rem] md:text-7xl font-bold tracking-tighter uppercase leading-[1.1]"
+            >
+              {inView && (
+                <TypewriterText
+                  text="Open to frontend and UI-focused roles, collaborations, and meaningful projects."
+                  typingSpeed={30}
+                  startDelay={300}
+                  cursor
+                  cursorChar="▌"
+                />
+              )}
+            </motion.h3>
+          </div>
 
           <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
             <motion.a
