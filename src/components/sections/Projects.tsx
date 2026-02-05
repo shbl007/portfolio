@@ -33,21 +33,30 @@ function useUISounds() {
     typeof window !== "undefined" &&
     /Mobi|Android|iPhone/i.test(navigator.userAgent);
 
-  const enabled = !prefersReducedMotion && !isMobile;
-
   const play = (src: string, volume = 0.15) => {
-    if (!enabled) return;
+    if (prefersReducedMotion) return;
+
     const audio = new Audio(src);
     audio.volume = volume;
     audio.play().catch(() => {});
   };
 
   return {
-    tick: () => play("/sounds/tick.mp3", 0.12),
-    swoosh: () => play("/sounds/swoosh.mp3", 0.18),
-    enabled,
+    // tick is desktop-only (hover sound)
+    tick: () => {
+      if (prefersReducedMotion) return;
+      if (isMobile) return;
+      play("/sounds/tick.mp3", 0.12);
+    },
+
+    // swoosh works on mobile too (gesture-based)
+    swoosh: () => {
+      if (prefersReducedMotion) return;
+      play("/sounds/swoosh.mp3", 0.18);
+    },
   };
 }
+
 
 export function FeaturedProjectsFX() {
   const sounds = useUISounds();
