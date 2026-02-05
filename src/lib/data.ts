@@ -3,7 +3,7 @@ export const projects = [
     title: "PLM Software",
     role: "Frontend / UI",
     year: "2025",
-    image: "/npd.jpeg",
+    image: "/npd.png",
   },
   {
     title: "Company Website",
@@ -15,13 +15,19 @@ export const projects = [
     title: "Thrifty Personal Leasing",
     role: "UI Development",
     year: "2024",
-    image: "/thrifty-pro1.jpeg",
+    image: "/thrifty.png",
   },
   {
     title: "Gemini Building Materials",
     role: "Frontend / UI",
     year: "2024",
-    image: "/gemini-pro.jpeg",
+    image: "/gemini.png",
+  },
+  {
+    title: "The Dwave",
+    role: "Frontend / UI",
+    year: "2026",
+    image: "/dwave.png",
   },
 ];
 
